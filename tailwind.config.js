@@ -1,7 +1,6 @@
 import {nextui} from '@nextui-org/theme'
 
 /** @type {import('tailwindcss').Config} */
-/*eslint-env node*/
 export default {
   content: [
     './components/**/*.{js,ts,jsx,tsx,mdx}',
