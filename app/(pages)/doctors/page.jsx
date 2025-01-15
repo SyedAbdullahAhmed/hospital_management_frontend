@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Spinner } from "@nextui-org/spinner";
-import {MailIcon,LockIcon,SearchIcon,EyeIcon,DeleteIcon,EditIcon} from "../../../components/patient/allComp"
+import {SearchIcon,EyeIcon,DeleteIcon,EditIcon} from "../../../components/patient/allComp"
 import {
     Table,
     TableHeader,
@@ -10,8 +10,6 @@ import {
     TableBody,
     TableRow,
     TableCell,
-    User,
-    Chip,
     Tooltip,
 } from "@nextui-org/react";
 import { Alert } from "@nextui-org/react";
@@ -24,24 +22,14 @@ import {
     ModalBody,
     ModalFooter,
     useDisclosure,
-    Checkbox,
-    Link,
     Select,
     SelectItem
 } from "@nextui-org/react";
 
 
-const sample = {
-    _id: 1,
-    name: "Dr. Sarah Miller",
-    email: "sarah.miller@example.com",
-    specialization: "Cardiologist", // neuro // peads //
-    experience: 15,
-    contactNumber: "03334567890"
-};
 
 
-export const columns = [
+const columns = [
     { name: "NAME", uid: "name" },
     { name: "EMAIL", uid: "email" },
     { name: "SPECIALIZATION", uid: "specialization" },
@@ -51,66 +39,7 @@ export const columns = [
     { name: "ACTIONS", uid: "actions" },
 ];
 
-export const users = [
-    {
-        _id: 1,
-        name: "Tony Reichert",
-        age: 24,
-        disease: "Management",
-        gender: "male",
-        patientType: "ICU",
-        contactNumber: "03311237808",
-        email: "tony.reichert@example.com",
-    },
-    {
-        _id: 2,
-        name: "Sophia Turner",
-        age: 30,
-        disease: "Flu",
-        gender: "female",
-        patientType: "General Ward",
-        contactNumber: "03219874562",
-        email: "sophia.turner@example.com"
-    },
-    {
-        _id: 3,
-        name: "Ethan Hunt",
-        age: 45,
-        disease: "Heart Attack",
-        gender: "male",
-        patientType: "Emergency",
-        contactNumber: "03009876543",
-        email: "ethan.hunt@example.com"
-    },
-    {
-        _id: 4,
-        name: "Amelia Clark",
-        age: 28,
-        disease: "Diabetes",
-        gender: "female",
-        patientType: "Regular Checkup",
-        contactNumber: "03125678901",
-        email: "amelia.clark@example.com"
-    },
-    {
-        _id: 5,
-        name: "John Doe",
-        age: 60,
-        disease: "Pneumonia",
-        gender: "male",
-        patientType: "ICU",
-        contactNumber: "03451237890",
-        email: "john.doe@example.com"
-    },
-];
 
-
-
-
-const statusColorMap = {
-    male: "success",
-    female: "danger",
-};
 
 export default function App() {
     const renderCell = React.useCallback((user, columnKey) => {
@@ -166,9 +95,9 @@ export default function App() {
                             </span>
                         </Tooltip> */}
                         <Tooltip color="danger" content="Delete user">
-                            <span className="text-lg text-danger cursor-pointer active:opacity-50" onClick={() => onHandleDelete(user._id)}>
+                            <button className="text-lg text-danger cursor-pointer active:opacity-50" onClick={() => onHandleDelete(user._id)}>
                                 <DeleteIcon />
-                            </span>
+                            </button>
                         </Tooltip>
                     </div>
                 );

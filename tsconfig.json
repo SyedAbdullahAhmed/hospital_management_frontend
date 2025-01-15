@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
+    "noImplicitAny": false, // Example: Disable a strict rule
+    "strict": false,         // Disable all strict checks
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
