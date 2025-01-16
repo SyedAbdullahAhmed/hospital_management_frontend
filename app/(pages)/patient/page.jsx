@@ -127,7 +127,7 @@ export default function App() {
     useEffect(() => {
         const fetchPatients = async () => {
             try {
-                const response = await fetch("https://hospital-management-backend-one.vercel.app/hospitalManagement/patient");
+                const response = await fetch("http://13.235.74.44/hospitalManagement/patient");
                 const data = await response.json();
                 setPatients(data.data);
                 setPatientsDup(data.data);
@@ -157,7 +157,7 @@ export default function App() {
     const onSubmit = async () => {
         try {
             setLoading(true)
-            const res = await axios.post("https://hospital-management-backend-one.vercel.app/hospitalManagement/patient", formInput);
+            const res = await axios.post("http://13.235.74.44/hospitalManagement/patient", formInput);
             if (!res.data.success) {
                 <Alert color={'danger'} title={res.data.message} />;
                 return;
@@ -188,7 +188,7 @@ export default function App() {
     const onHandleDelete = async (id) => {
         try {
             setLoading(true)
-            const res = await axios.delete(`https://hospital-management-backend-one.vercel.app/hospitalManagement/patient/${id}`);
+            const res = await axios.delete(`http://13.235.74.44/hospitalManagement/patient/${id}`);
             if (!res.data.success) {
                 <Alert color={'danger'} title={res.data.message} />;
                 return;

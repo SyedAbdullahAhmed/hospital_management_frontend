@@ -175,7 +175,7 @@ export default function App() {
     const onHandleDelete = async (id) => {
         try {
             setLoading(true)
-            const res = await axios.delete(`https://hospital-management-backend-one.vercel.app/hospitalManagement/doctor/${id}`);
+            const res = await axios.delete(`http://13.235.74.44/hospitalManagement/doctor/${id}`);
             if (!res.data.success) {
                 <Alert color={'danger'} title={res.data.message} />;
                 return;

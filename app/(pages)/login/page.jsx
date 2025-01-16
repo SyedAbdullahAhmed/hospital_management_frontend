@@ -47,7 +47,7 @@ export default function App() {
                 return;
             }
 
-            const res = await axios.post("https://hospital-management-backend-one.vercel.app/hospitalManagement/login", data)
+            const res = await axios.post("http://13.235.74.44/hospitalManagement/login", data)
             if (!res.data.success) {
                 setAlertStatus('n')
                 setAlertMessage(res.data.message)

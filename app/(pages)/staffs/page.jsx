@@ -118,7 +118,7 @@ export default function App() {
     useEffect(() => {
         const fetchStaffs = async () => {
             try {
-                const response = await fetch("https://hospital-management-backend-one.vercel.app/hospitalManagement/staff");
+                const response = await fetch("http://13.235.74.44/hospitalManagement/staff");
                 const data = await response.json();
                 setStaffs(data.data);
                 setStaffsDup(data.data);
